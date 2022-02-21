@@ -153,11 +153,11 @@
             </div>
           </li> -->
           <li class="nav-item menu-items">
-            <a class="nav-link" href="#">
+            <a class="nav-link" href="{{route('admin.journey')}}">
               <span class="menu-icon">
                 <i class="mdi mdi-speedometer"></i>
               </span>
-              <span class="menu-title">Icare Special</span>
+              <span class="menu-title">Icare Journey</span>
             </a>
           </li>
           <li class="nav-item menu-items">
@@ -189,7 +189,7 @@
           
 
           <li class="nav-item menu-items">
-            <a class="nav-link" href="#">
+            <a class="nav-link" href="{{route('admin.contact')}}">
               <span class="menu-icon">
                 <i class="mdi mdi-speedometer"></i>
               </span>
@@ -198,11 +198,11 @@
           </li>
 
           <li class="nav-item menu-items">
-            <a class="nav-link" href="#">
+            <a class="nav-link" href="{{route('admin.testimonial')}}">
               <span class="menu-icon">
                 <i class="mdi mdi-speedometer"></i>
               </span>
-              <span class="menu-title">Project</span>
+              <span class="menu-title">Testimonial</span>
             </a>
           </li>
           
@@ -216,6 +216,22 @@
                 <i class="mdi mdi-playlist-play"></i>
               </span>
               <span class="menu-title">Company Contacts</span>
+            </a>
+          </li>
+          <li class="nav-item menu-items">
+            <a class="nav-link" href="{{route('admin.Category')}}">
+              <span class="menu-icon">
+                <i class="mdi mdi-playlist-play"></i>
+              </span>
+              <span class="menu-title">career Category</span>
+            </a>
+          </li>
+          <li class="nav-item menu-items">
+            <a class="nav-link" href="{{route('admin.form')}}">
+              <span class="menu-icon">
+                <i class="mdi mdi-playlist-play"></i>
+              </span>
+              <span class="menu-title">career form</span>
             </a>
           </li>
           
@@ -279,12 +295,7 @@
         </div>
 
 
-        <footer class="footer">
-            <div class="d-sm-flex justify-content-center justify-content-sm-between">
-              <span class="text-muted d-block text-center text-sm-left d-sm-inline-block">Copyright © iCare Pvt.Ltd</span>
-              <span class="float-none float-sm-right d-block mt-1 mt-sm-0 text-center"> Designed by <a href="https://www.prabidhi.com/" target="_blank">Prabidhi Enterprises</a></span>
-            </div>
-          </footer>
+        
           <!-- partial -->
         </div>
         <!-- main-panel ends -->
@@ -319,9 +330,10 @@
     <!-- End custom js for this page -->
     
                 <script>
-                        CKEDITOR.replace( 'description' );
+                        CKEDITOR.replace( 'description');
                         CKEDITOR.config.autoParagraph=false;
                 </script>
+               
     
   </body>
 </html>

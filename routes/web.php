@@ -69,5 +69,44 @@ Route::group(['prefix' => 'admin','middleware' => 'authadmin'], function () {
 	Route::get('/services/edit/{id}', admin\ServiceController::class .'@edit')->name('admin.service.edit');
 	Route::post('/services/update/{id}', admin\ServiceController::class .'@update')->name('admin.service.update');
 	Route::get('/services/destroy/{id}', admin\ServiceController::class .'@destroy')->name('admin.service.destroy');
+    
+
+	Route::get('/contact/all', admin\ContactMessageController::class .'@index')->name('admin.contact');
+	Route::get('/contact/add', admin\ContactMessageController::class .'@create')->name('admin.contact.add');
+	Route::post('/contact/store', admin\ContactMessageController::class .'@store')->name('admin.contact.store');
+	Route::get('/contact/edit/{id}', admin\ContactMessageController::class .'@edit')->name('admin.contact.edit');
+	Route::post('/contact/update/{id}', admin\ContactMessageController::class .'@update')->name('admin.contact.update');
+	Route::get('/contact/delete/{id}', admin\ContactMessageController::class .'@destroy')->name('admin.contact.destroy');
+
+	Route::get('/testimonial', admin\TestimonialController::class .'@index')->name('admin.testimonial');
+	Route::get('/testimonial/add', admin\TestimonialController::class .'@create')->name('admin.testimonial.add');
+	Route::post('/testimonial/store', admin\TestimonialController::class .'@store')->name('admin.testimonial.store');
+	Route::get('/testimonial/edit/{id}', admin\TestimonialController::class .'@edit')->name('admin.testimonial.edit');
+	Route::post('/testimonial/update/{id}', admin\TestimonialController::class .'@update')->name('admin.testimonial.update');
+	Route::get('/testimonial/delete/{id}', admin\TestimonialController::class .'@destroy')->name('admin.testimonial.destroy');
+
+	Route::get('/journey', admin\JourneyController::class .'@index')->name('admin.journey');
+	Route::get('/journey/add', admin\JourneyController::class .'@create')->name('admin.journey.add');
+	Route::post('/journey/store', admin\JourneyController::class .'@store')->name('admin.journey.store');
+	Route::get('/journey/edit/{id}', admin\JourneyController::class .'@edit')->name('admin.journey.edit');
+	Route::post('/journey/update/{id}', admin\JourneyController::class .'@update')->name('admin.journey.update');
+	Route::get('/journey/delete/{id}', admin\JourneyController::class .'@destroy')->name('admin.journey.destroy');
+
+	Route::get('/category', admin\CategoryController::class .'@index')->name('admin.Category');
+	Route::get('/category/add', admin\CategoryController::class .'@create')->name('admin.Category.add');
+	Route::post('/category/store', admin\CategoryController::class .'@store')->name('admin.Category.store');
+	Route::get('/category/edit/{id}', admin\CategoryController::class .'@edit')->name('admin.Category.edit');
+	Route::post('/category/update/{id}', admin\CategoryController::class .'@update')->name('admin.Category.update');
+	Route::get('/category/delete/{id}', admin\CategoryController::class .'@destroy')->name('admin.Category.destroy');
+	// career form
+	Route::get('/form', admin\CareerformController::class .'@index')->name('admin.form');
+	Route::get('/form/add', admin\CareerformController::class .'@create')->name('admin.form.add');
+	Route::post('/form/store', admin\CareerformController::class .'@store')->name('admin.form.store');
+	Route::get('/form/edit/{id}', admin\CareerformController::class .'@edit')->name('admin.form.edit');
+	Route::post('/form/update/{id}', admin\CareerformController::class .'@update')->name('admin.form.update');
+	Route::get('/form/delete/{id}', admin\CareerformController::class .'@destroy')->name('admin.form.destroy');
+
+
+
 
 });
