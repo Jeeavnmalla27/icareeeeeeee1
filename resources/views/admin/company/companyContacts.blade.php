@@ -16,7 +16,7 @@
             <div class="card">
               <div class="card-body">
                 <h4 class="card-title">Company Contact Details</h4>
-                @if ($contacts->count() < 2)                    
+                @if ($contacts->count() < 1)                    
                   <a href="{{route('admin.companyContacts.add')}}" class="btn btn-success">Add New</a>
                   @endif
 

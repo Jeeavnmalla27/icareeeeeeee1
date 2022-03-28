@@ -14,7 +14,7 @@
                 <div class="card">
                   <div class="card-body">
                     <h4 class="card-title">Icon/Title</h4>
-                    @if($images->count() < 7)
+                    @if($images->count() < 9)
                       <a class="btn btn-primary float-right" href="{{route('admin.icon.add')}}">Add Icon</a>
                     @endif
                     <div class="table-responsive">
@@ -30,7 +30,7 @@
                             @foreach ($images as $image)
                             <tr>
                                 <td class="py-1">
-                                  <img class="img-fluid" src="{{ asset('images/slider') }}/{{$image->image}}" alt="image" />
+                                  <img class="img-fluid" src="{{ asset('images/images') }}/{{$image->icon}}" alt="image" />
                                 </td>
                                 <td>
                                   {{$image->name}}

@@ -35,7 +35,7 @@
                                 </td>
                                 <td>{{$testimonial->name}}</td>
                                 <td>{{$testimonial->position}}</td>
-                                <td>{{$testimonial->description}}</td>
+                                <td>{!!$testimonial->description!!}</td>
                                 <td>
                                   <a class="btn btn-primary" href="{{route('admin.testimonial.edit',['id'=>$testimonial->id])}}">Edit</a>
                                   <a class="btn btn-danger" href="{{route('admin.testimonial.destroy',['id'=>$testimonial->id])}}">Delete</a>

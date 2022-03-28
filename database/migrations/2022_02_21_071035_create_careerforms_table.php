@@ -21,12 +21,12 @@ return new class extends Migration
             $table->string('phone');
             $table->string('city');
             $table->string('work_experience');
-            $table->unsignedBigInteger('position_id');
+            $table->string('position_id');//unsignedBigInteger
             $table->string('linkedin');
             $table->string('cover_letter');
             $table->string('resume');
             $table->timestamps();
-            $table->foreign('position_id')->references('id')->on('categories')->onDelete('cascade');
+            // $table->foreign('position_id')->references('id')->on('categories')->onDelete('cascade');
               
         });
     }

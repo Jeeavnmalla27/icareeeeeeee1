@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+// use Illuminate\Support\Facades\Auth;
 
 /*
 |--------------------------------------------------------------------------
@@ -13,9 +14,36 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+
+// Route::get('/', function () {
+//     return view('frontend.index');
+// });
+Route::get('/', frontend\FrontendController::class. '@index')->name('frontend.index');
+Route::get('/about', frontend\FrontendController::class. '@about')->name('frontend.About.About');
+Route::get('/hhjs', frontend\FrontendController::class. '@term')->name('frontend.terms.terms');
+Route::get('/gg', frontend\FrontendController::class. '@privacy')->name('frontend.privacy.privacy');
+Route::get('/contact', frontend\FrontendController::class. '@contact')->name('frontend.contact.contact');
+Route::get('/ggg', frontend\FrontendController::class. '@frequent')->name('frontend.faq.Faq');
+Route::get('/career', frontend\FrontendController::class. '@career')->name('frontend.career.career');
+Route::get('/career/apply', frontend\FrontendController::class. '@apply')->name('frontend.apply');
+Route::get('/career/details/{id}', frontend\FrontendController::class. '@detail')->name('frontend.detail');
+
+
+
+Route::get('/service', frontend\FrontendController::class. '@service')->name('frontend.service.service');
+Route::post('contact/save',frontend\FrontendController ::class. '@save_contact')->name('contact.save');
+Route::post('consulation/save',frontend\FrontendController ::class. '@save_consulation')->name('consulation.save');
+Route::post('careerform/save',frontend\FrontendController ::class. '@save_careerform')->name('careerform.save');
+
+
+
+
+
+
+
+
+
+// Route::get('/', function(){return view('frontend.About-Us-Page.About');});
 
 Auth::routes();
 
@@ -23,12 +51,12 @@ Auth::routes();
 Route::group(['prefix' => 'admin','middleware' => 'authadmin'], function () {
     // Admin Dashboard
     Route::get('/dashboard', admin\DashboardController::class .'@index')->name('admin.dashboard');
+	Route::get('/logout', admin\LogoutController::class .'@logout')->name('logout');
 
 
 
     Route::get('/video', admin\HomeBgvideoController::class .'@index')->name('admin.video');
 	Route::get('/video/add', admin\HomeBgvideoController::class .'@create')->name('admin.video.add');
-    
 	Route::post('/video/store', admin\HomeBgvideoController::class .'@store')->name('admin.video.store');
 	Route::get('/video/edit/{id}', admin\HomeBgvideoController::class .'@edit')->name('admin.video.edit');
 	Route::post('/video/update/{id}', admin\HomeBgvideoController::class .'@update')->name('admin.video.update');
@@ -92,21 +120,64 @@ Route::group(['prefix' => 'admin','middleware' => 'authadmin'], function () {
 	Route::post('/journey/update/{id}', admin\JourneyController::class .'@update')->name('admin.journey.update');
 	Route::get('/journey/delete/{id}', admin\JourneyController::class .'@destroy')->name('admin.journey.destroy');
 
-	Route::get('/category', admin\CategoryController::class .'@index')->name('admin.Category');
-	Route::get('/category/add', admin\CategoryController::class .'@create')->name('admin.Category.add');
-	Route::post('/category/store', admin\CategoryController::class .'@store')->name('admin.Category.store');
-	Route::get('/category/edit/{id}', admin\CategoryController::class .'@edit')->name('admin.Category.edit');
-	Route::post('/category/update/{id}', admin\CategoryController::class .'@update')->name('admin.Category.update');
-	Route::get('/category/delete/{id}', admin\CategoryController::class .'@destroy')->name('admin.Category.destroy');
+	
 	// career form
 	Route::get('/form', admin\CareerformController::class .'@index')->name('admin.form');
-	Route::get('/form/add', admin\CareerformController::class .'@create')->name('admin.form.add');
+	// Route::get('/form/add', admin\CareerformController::class .'@create')->name('admin.form.add');
 	Route::post('/form/store', admin\CareerformController::class .'@store')->name('admin.form.store');
-	Route::get('/form/edit/{id}', admin\CareerformController::class .'@edit')->name('admin.form.edit');
-	Route::post('/form/update/{id}', admin\CareerformController::class .'@update')->name('admin.form.update');
+	// Route::get('/form/edit/{id}', admin\CareerformController::class .'@edit')->name('admin.form.edit');
+	// Route::post('/form/update/{id}', admin\CareerformController::class .'@update')->name('admin.form.update');
 	Route::get('/form/delete/{id}', admin\CareerformController::class .'@destroy')->name('admin.form.destroy');
 
+	//topclientIcon
+	
+    Route::get('/topclient', admin\ClientController::class .'@index')->name('admin.topclient');
+	Route::get('/topclient/add', admin\ClientController::class .'@create')->name('admin.topclient.add');
+	Route::post('/topclient/store', admin\ClientController::class .'@store')->name('admin.topclient.store');
+	Route::get('/topclient/edit/{id}', admin\ClientController::class .'@edit')->name('admin.topclient.edit');
+	Route::post('/topclient/update/{id}', admin\ClientController::class .'@update')->name('admin.topclient.update');
+	Route::get('/topclient/delete/{id}', admin\ClientController::class .'@destroy')->name('admin.topclient.destroy');
 
+	//consulation
+	Route::get('/consulation', admin\ConsulationController::class .'@index')->name('admin.consulation');
+	Route::get('/consulation/delete/{id}', admin\ConsulationController::class .'@destroy')->name('admin.consulation.destroy');
+
+	//faq
+	Route::get('/FAQ', admin\FaqController::class .'@index')->name('admin.faq');
+	Route::get('/FAQ/add', admin\FaqController::class .'@create')->name('admin.faq.add');
+	Route::post('/FAQ/store', admin\FaqController::class .'@store')->name('admin.faq.store');
+	Route::get('/FAQ/edit/{id}', admin\FaqController::class .'@edit')->name('admin.faq.edit');
+	Route::post('/FAQ/update/{id}', admin\FaqController::class .'@update')->name('admin.faq.update');
+	Route::get('/FAQ/delete/{id}', admin\FaqController::class .'@destroy')->name('admin.faq.destroy');
+
+	//Privacy
+	Route::get('/privacy', admin\PrivacyController::class .'@index')->name('admin.privacy');
+	Route::get('/privacy/add', admin\PrivacyController::class .'@create')->name('admin.privacy.add');
+	Route::post('/privacy/store', admin\PrivacyController::class .'@store')->name('admin.privacy.store');
+	Route::get('/privacy/edit/{id}', admin\PrivacyController::class .'@edit')->name('admin.privacy.edit');
+	Route::post('/privacy/update/{id}', admin\PrivacyController::class .'@update')->name('admin.privacy.update');
+	Route::get('/privacy/delete/{id}', admin\PrivacyController::class .'@destroy')->name('admin.privacy.destroy');
+
+	//terms
+	Route::get('/terms', admin\TermsController::class .'@index')->name('admin.terms');
+	Route::get('/terms/add', admin\TermsController::class .'@create')->name('admin.terms.add');
+	Route::post('/terms/store', admin\TermsController::class .'@store')->name('admin.terms.store');
+	Route::get('/terms/edit/{id}', admin\TermsController::class .'@edit')->name('admin.terms.edit');
+	Route::post('/terms/update/{id}', admin\TermsController::class .'@update')->name('admin.terms.update');
+	Route::get('/terms/delete/{id}', admin\TermsController::class .'@destroy')->name('admin.terms.destroy');
+	//Job Detail
+	//terms
+	Route::get('/Jobdetail', admin\JobController::class .'@index')->name('admin.Jobdetail');
+	Route::get('/Jobdetail/add', admin\JobController::class .'@create')->name('admin.Jobdetail.add');
+	Route::post('/Jobdetail/store', admin\JobController::class .'@store')->name('admin.Jobdetail.store');
+	Route::get('/Jobdetail/edit/{id}', admin\JobController::class .'@edit')->name('admin.Jobdetail.edit');
+	Route::post('/Jobdetail/update/{id}', admin\JobController::class .'@update')->name('admin.Jobdetail.update');
+	Route::get('/Jobdetail/delete/{id}', admin\JobController::class .'@destroy')->name('admin.Jobdetail.destroy');
+
+    
 
 
 });
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

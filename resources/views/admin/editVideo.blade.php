@@ -24,10 +24,10 @@
                 </div>
                   <div class="form-group">
                       <div class="mb-5">
-                          <img class="img-fluid" src="{{asset('images/slider')}}/{{$images->image}}">
+                          <img class="img-fluid" src="{{asset('storage/video')}}/{{$images->video}}">
                       </div>
                     <label>New Video upload</label>
-                    <input type="file" required name="vid" class="form-control">
+                    <input type="file" required name="img" accept="audio/*,video/*,image/*" class="form-control">
                   </div>
                   
                   <button type="submit" class="btn btn-primary me-2">Submit</button>

@@ -41,7 +41,7 @@ class HomeBgvideoController extends Controller
         $saving->name = $request->name;
         if(request()->img){
             $filename = time() . '.' . request()->img->getClientOriginalExtension();
-            request()->img->move(public_path('images/video'), $filename);
+            request()->img->move(public_path('storage/video'), $filename);
             $saving->video = $filename;
         }else
         {
@@ -87,7 +87,7 @@ class HomeBgvideoController extends Controller
         $saving->name = $request->name;
         if(request()->img){
             $filename = time() . '.' . request()->img->getClientOriginalExtension();
-            request()->img->move(public_path('images/video'), $filename);
+            request()->img->move(public_path('storage/video'), $filename);
             $saving->video = $filename;
         }else
         {

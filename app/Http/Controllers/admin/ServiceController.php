@@ -90,10 +90,10 @@ class ServiceController extends Controller
         $saving->title = $request->title; 
         $saving->description = $request->description;        
         if($request->has('img')){
-            $destination = 'storage/images/services/'.$saving->image;
-            if(File::exists($destination)){
-                File::delete($destination);
-            }
+            // $destination = 'storage/images/services/'.$saving->image;
+            // if(File::exists($destination)){
+            //     File::delete($destination);
+            // }
         if(request()->img){
             $filename = time() . '.' . request()->img->getClientOriginalExtension();
             request()->img->move(public_path('storage/images/services'), $filename);

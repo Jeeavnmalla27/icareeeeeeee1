@@ -73,8 +73,8 @@
       <!-- partial:partials/_sidebar.html -->
       <nav class="sidebar sidebar-offcanvas" id="sidebar">
         <div class="sidebar-brand-wrapper d-none d-lg-flex align-items-center justify-content-center fixed-top">
-          <a class="sidebar-brand brand-logo" href="index.html"><img class="img-fuild" src="{{asset ('admin/images/icare_logo_white.png')}}" alt="logo" /></a>
-          <a class="sidebar-brand brand-logo-mini" href="index.html">Icare
+          <a class="sidebar-brand brand-logo" href="{{route('admin.dashboard')}}"><img class="img-fuild" src="{{asset ('admin/images/icare_logo_white.png')}}" alt="logo" style="padding-left: 45px;"/></a>
+          <a class="sidebar-brand brand-logo-mini" href="{{route('admin.dashboard')}}">iCare
             {{-- <img src="{{asset ('admin/images/logo-mini.svg')}}" alt="logo" /> --}}
           </a>
         </div>
@@ -99,7 +99,7 @@
           <li class="nav-item menu-items">
             <a class="nav-link" href="{{route('admin.dashboard')}}">
               <span class="menu-icon">
-                <i class="mdi mdi-speedometer"></i>
+                <i class="mdi mdi-gauge"></i>
               </span>
               <span class="menu-title">Dashboard</span>
             </a>
@@ -107,7 +107,7 @@
           <li class="nav-item menu-items">
             <a class="nav-link" href="{{route('admin.video')}}">
               <span class="menu-icon">
-                <i class="mdi mdi-speedometer"></i>
+                <i class="mdi mdi-image"></i>
               </span>
               <span class="menu-title">Home Slider Video</span>
             </a>
@@ -123,7 +123,7 @@
           <li class="nav-item menu-items">
             <a class="nav-link" data-bs-toggle="collapse" href="#ui-basic" aria-expanded="false" aria-controls="ui-basic">
               <span class="menu-icon">
-                <i class="mdi mdi-laptop"></i>
+                <i class="mdi mdi-layers"></i>
               </span>
               <span class="menu-title">About Us</span>
               <i class="menu-arrow"></i>
@@ -155,17 +155,17 @@
           <li class="nav-item menu-items">
             <a class="nav-link" href="{{route('admin.journey')}}">
               <span class="menu-icon">
-                <i class="mdi mdi-speedometer"></i>
+                <i class="mdi mdi-file-document-box"></i>
               </span>
               <span class="menu-title">Icare Journey</span>
             </a>
           </li>
           <li class="nav-item menu-items">
-            <a class="nav-link" href="#">
+            <a class="nav-link" href="{{route('admin.topclient')}}">
               <span class="menu-icon">
-                <i class="mdi mdi-speedometer"></i>
+                <i class="mdi mdi-account-multiple"></i>
               </span>
-              <span class="menu-title">Testimonial</span>
+              <span class="menu-title">Our Top Client</span>
             </a>
           </li>
           <li class="nav-item menu-items">
@@ -180,7 +180,7 @@
           <li class="nav-item menu-items">
             <a class="nav-link" href="{{route('admin.service')}}">
               <span class="menu-icon">
-                <i class="mdi mdi-speedometer"></i>
+                <i class="mdi mdi-arrange-bring-forward"></i>
               </span>
               <span class="menu-title">Service</span>
             </a>
@@ -191,7 +191,7 @@
           <li class="nav-item menu-items">
             <a class="nav-link" href="{{route('admin.contact')}}">
               <span class="menu-icon">
-                <i class="mdi mdi-speedometer"></i>
+                <i class="mdi mdi-comment-multiple-outline"></i>
               </span>
               <span class="menu-title">Contact Message</span>
             </a>
@@ -200,36 +200,66 @@
           <li class="nav-item menu-items">
             <a class="nav-link" href="{{route('admin.testimonial')}}">
               <span class="menu-icon">
-                <i class="mdi mdi-speedometer"></i>
+                <i class="mdi mdi-view-carousel"></i>
               </span>
               <span class="menu-title">Testimonial</span>
             </a>
           </li>
-          
-          
-          
-         
+          <li class="nav-item menu-items">
+            <a class="nav-link" href="{{route('admin.consulation')}}">
+              <span class="menu-icon">
+                <i class="mdi mdi-email"></i>
+              </span>
+              <span class="menu-title">Consulation Form</span>
+            </a>
+          </li>
           
           <li class="nav-item menu-items">
             <a class="nav-link" href="{{route('admin.companyContacts')}}">
               <span class="menu-icon">
-                <i class="mdi mdi-playlist-play"></i>
+                <i class="mdi mdi-contacts"></i>
               </span>
               <span class="menu-title">Company Contacts</span>
             </a>
           </li>
           <li class="nav-item menu-items">
-            <a class="nav-link" href="{{route('admin.Category')}}">
+            <a class="nav-link" href="{{route('admin.faq')}}">
+              <span class="menu-icon">
+                <i class="mdi mdi-table-large"></i>
+              </span>
+              <span class="menu-title">FAQ</span>
+            </a>
+          </li>
+
+          <li class="nav-item menu-items">
+            <a class="nav-link" href="{{route('admin.privacy')}}">
               <span class="menu-icon">
                 <i class="mdi mdi-playlist-play"></i>
               </span>
-              <span class="menu-title">career Category</span>
+              <span class="menu-title">Privacy</span>
             </a>
           </li>
           <li class="nav-item menu-items">
-            <a class="nav-link" href="{{route('admin.form')}}">
+            <a class="nav-link" href="{{route('admin.terms')}}">
               <span class="menu-icon">
                 <i class="mdi mdi-playlist-play"></i>
+              </span>
+              <span class="menu-title">Terms and Conndition</span>
+            </a>
+          </li>
+          <li class="nav-item menu-items">
+            <a class="nav-link" href="{{route('admin.Jobdetail')}}">
+              <span class="menu-icon">
+                <i class="mdi mdi-view-grid"></i>
+              </span>
+              <span class="menu-title">Job Details</span>
+            </a>
+          </li>
+         
+          <li class="nav-item menu-items">
+            <a class="nav-link" href="{{route('admin.form')}}">
+              <span class="menu-icon">
+                <i class="mdi mdi-cloud-download"></i>
               </span>
               <span class="menu-title">career form</span>
             </a>
@@ -242,7 +272,7 @@
         <!-- partial:partials/_navbar.html -->
         <nav class="navbar p-0 fixed-top d-flex flex-row">
           <div class="navbar-brand-wrapper d-flex d-lg-none align-items-center justify-content-center">
-            <a class="navbar-brand brand-logo-mini" href="index.html"><img src="{{asset ('admin/images/logo-mini.svg')}}" alt="logo" /></a>
+            <a class="navbar-brand brand-logo-mini" href="{{route('admin.dashboard')}}"><img src="{{asset ('frontend/Assets/static/images/logo/favicon.png')}}" alt="logo" /></a>
           </div>
           <div class="navbar-menu-wrapper flex-grow d-flex align-items-stretch">
             <button class="navbar-toggler navbar-toggler align-self-center" type="button" data-toggle="minimize">
@@ -330,7 +360,7 @@
     <!-- End custom js for this page -->
     
                 <script>
-                        CKEDITOR.replace( 'description');
+                        CKEDITOR.replace('description');
                         CKEDITOR.config.autoParagraph=false;
                 </script>
                

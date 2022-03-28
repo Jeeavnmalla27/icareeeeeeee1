@@ -36,7 +36,7 @@
                                 <td class="py-1">
                                   <img src="{{ asset('images/journey') }}/{{$journey->image}}" alt="image" />
                                 </td>
-                                <td>{{$journey->name}}</td>
+                              
                                 <td>{{$journey->step1}}</td>
                                 <td>{{$journey->step2}}</td>
                                 <td>{{$journey->step3}}</td>

@@ -4,7 +4,7 @@ namespace App\Http\Controllers\admin;
 
 use App\Http\Controllers\Controller;
 use App\Models\careerform;
-use App\Models\Category;
+
 use Illuminate\Http\Request;
 
 class CareerformController extends Controller
@@ -27,8 +27,8 @@ class CareerformController extends Controller
      */
     public function create()
     {
-        $category = Category::all();
-        return view('admin.careerform.addForm',compact("category"));
+        // $category = Category::all();
+        // return view('admin.careerform.addForm',compact("category"));
     }
 
     /**
@@ -39,32 +39,26 @@ class CareerformController extends Controller
      */
     public function store(Request $request)
     {
-        // dd($request->f_name);
-        $forms = new careerform();
-        
-        $forms->f_name = $request->f_name;
-        $forms->l_name = $request->l_name;
-        $forms->email = $request->email;
-        $forms->phone= $request->phone;
-        $forms->city = $request->city;
-        $forms->work_experience= $request->work_experience;
-        $forms->position_id = $request->position_id;
-        $forms->linkedin = $request->linkedin;
-        $forms->cover_letter = $request->cover_letter;
-        if(request()->resume){
-            $filename = time() . '.' . request()->resume->getClientOriginalExtension();
-            request()->resume->move(public_path('images/resume'), $filename);
-            $forms->resume = $filename;
-        }else
-        {
-            $forms->resume = 'file';
-        }
-        $forms->save();
-        return redirect()->route('admin.form');
-
-        
-
-
+        // $forms = new careerform();
+        // $forms->f_name = $request->f_name;
+        // $forms->l_name = $request->l_name;
+        // $forms->email = $request->email;
+        // $forms->phone= $request->phone;
+        // $forms->city = $request->city;
+        // $forms->work_experience= $request->work_experience;
+        // $forms->position_id = $request->position_id;
+        // $forms->linkedin = $request->linkedin;
+        // $forms->cover_letter = $request->cover_letter;
+        // if(request()->resume){
+        //     $filename = time() . '.' . request()->resume->getClientOriginalExtension();
+        //     request()->resume->move(public_path('images/resume'), $filename);
+        //     $forms->resume = $filename;
+        // }else
+        // {
+        //     $forms->resume = 'file';
+        // }
+        // $forms->save();
+        // return redirect()->route('admin.form'); 
     }
 
     /**
@@ -86,10 +80,7 @@ class CareerformController extends Controller
      */
     public function edit($id)
     {
-        $forms = careerform::find($id);
-        $category = Category::all();
-        return view('admin.careerform.editForm',compact("forms","category"));
-
+       
     
     }
 
@@ -101,28 +92,8 @@ class CareerformController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, $id)
-    {
-        $forms = careerform::find($id);
-        
-        $forms->f_name = $request->f_name;
-        $forms->l_name = $request->l_name;
-        $forms->email = $request->email;
-        $forms->phone= $request->phone;
-        $forms->city = $request->city;
-        $forms->work_experience= $request->work_experience;
-        $forms->position_id = $request->position_id;
-        $forms->linkedin = $request->linkedin;
-        $forms->cover_letter = $request->cover_letter;
-        if(request()->resume){
-            $filename = time() . '.' . request()->resume->getClientOriginalExtension();
-            request()->resume->move(public_path('images/resume'), $filename);
-            $forms->resume = $filename;
-        }else
-        {
-            $forms->resume = 'file';
-        }
-        $forms->save();
-        return redirect()->route('admin.form');
+     {
+   
     }
 
     /**

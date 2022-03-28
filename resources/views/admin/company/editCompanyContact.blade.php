@@ -15,7 +15,7 @@
         <div class="col-12 grid-margin">
             <div class="card">
               <div class="card-body">
-                <h4 class="card-title">Add Company Contact Details</h4>
+                <h4 class="card-title">Edit Company Contact Details</h4>
                 <form class="form-sample" action="{{ route('admin.companyContacts.update', ['id'=>$contact->id]) }}" method="POST">@csrf
                     <div class="row">
                         <div class="col-md-6">

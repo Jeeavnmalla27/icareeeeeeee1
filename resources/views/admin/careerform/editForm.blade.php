@@ -22,7 +22,7 @@
                           <div class="form-group">
                             <label for="f_name" class="col-sm-3 col-form-label">First Name</label>
                             <div class="col-sm-9">
-                              <input type="text" name="f_name" id="f_name" class="form-control" />
+                              <input type="text" name="f_name" id="f_name" value="{{$forms->f_name}}class="form-control" />
                             </div>
                           </div>
                         </div>
@@ -30,7 +30,7 @@
                           <div class="form-group">
                             <label for="l_name" class=" col-form-label">Last Name</label>
                             <div class="col-sm-9">
-                              <input id="l_name" name="l_name" type="text" class="form-control" />
+                              <input id="l_name" name="l_name" type="text" value="{{$forms->l_name}}" class="form-control" />
                             </div>
                           </div>
                         </div>
@@ -41,7 +41,7 @@
                           <div class="form-group">
                             <label for="email" class="col-sm-3 col-form-label">Email</label>
                             <div class="col-sm-9">
-                              <input type="email" name="email" id="email" class="form-control" />
+                              <input type="email" name="email" id="email" value="{{$forms->email}}"class="form-control" />
                             </div>
                           </div>
                         </div>
@@ -49,7 +49,7 @@
                           <div class="form-group">
                             <label for="phone" class=" col-form-label">Phone Number</label>
                             <div class="col-sm-9">
-                              <input id="phone" name="phone" type="number" class="form-control" />
+                              <input id="phone" name="phone" type="number" value="{{$forms->phone}}"class="form-control" />
                             </div>
                           </div>
                         </div>
@@ -61,7 +61,7 @@
                       <div class="form-group">
                         <label for="city" class="col-form-label">City</label>
                         <div class="col-sm-9">
-                          <input type="text" name="city" id="city" class="form-control" />
+                          <input type="text" name="city" id="city" value="{{$forms->city}}"class="form-control" />
                         </div>
                       </div>
                     </div>
@@ -71,7 +71,7 @@
                       <div class="form-group">
                         <label id="work_experience" class="col-form-label">Work Experience</label>
                         <div class="col-sm-9">
-                          <input type="number" name="work_experience"  id="work_experience" class="form-control" />
+                          <input type="number" name="work_experience"  id="work_experience" value="{{$forms->work_experience}}"class="form-control" />
                         </div>
                       </div>
                     </div>
@@ -94,14 +94,14 @@
                       <div class="form-group">
                         <label class="col-form-label">Linkedin Profile</label>
                         <div class="col-sm-9">
-                          <input type="url" name="linkedin" id="linkedin" class="form-control" />
+                          <input type="url" name="linkedin" id="linkedin"value="{{$forms->linkedin}}" class="form-control" />
                         </div>
                       </div>
                     </div>
                     <div class="col-md-6">
                     <div class="form-group">
                     <label for="cover_letter">Cover Letter</label>
-                    <textarea required class="form-control" id="description" rows="7" name="cover_letter"></textarea>
+                    <textarea required class="form-control" id="description" value="{{$forms->cover_letter}}" rows="7" name="cover_letter"></textarea>
                   </div>
                     </div>
                        </div>

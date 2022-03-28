@@ -33,7 +33,7 @@
                                   <img height="100" width="100" src="{{ asset('images/about') }}/{{$content->image}}" alt="image" />
                                 </td>
                                 <td> {{$content->title}} </td>
-                                <td>{!! $content->content !!}</td>
+                                <td >{!!Str::limit($content->content, 50, $end='...')!!}</td>
                                 <td>
                                   <a href="{{route('admin.about.edit', ['id'=>$content->id])}}" class="btn btn-primary">Edit</a>
                                   <a href="{{route('admin.about.destroy', ['id'=>$content->id])}}" class="btn btn-danger">Delete</a>

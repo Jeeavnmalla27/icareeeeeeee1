@@ -24,7 +24,7 @@
                   </div>
                   <div class="form-group">
                     <label>New Video upload</label>
-                    <input type="file" required name="img" class="form-control">
+                    <input type="file" required name="img"  accept="audio/*,video/*,image/*" class="form-control">
                   </div>
                   
                   <button type="submit" class="btn btn-primary me-2">Submit</button>

@@ -16,7 +16,6 @@
             <div class="card">
               <div class="card-body">
                 <h4 class="card-title">User Messages</h4>
-                <a href="{{route('admin.form.add')}}" class="btn btn-success">Add New</a>
                 <div class="table-responsive">
                   <table class="table">
                     <thead>
@@ -35,6 +34,7 @@
                       </tr>
                     </thead>
                     <tbody>
+                      <p></p>
                         @foreach ($forms as $form)
                             <tr>
                
@@ -45,12 +45,14 @@
                                   <td>  {{$form->city}} </td>
                                   <td>  {{$form->work_experience}} </td>
                                   <td>  {{$form->position_id}} </td>
-                                  <td>  {{$form->linkedin}} </td>
+                                  <td><a href="{{$form->linkedin}}"> {{$form->linkedin}}</a> </td>
                                   <td>  {{$form->cover_letter}} </td>
-                                  <td>  {{$form->resume}} </td>
-                                <td>
-                                  <a href="{{route('admin.form.edit', ['id'=>$form->id])}}" class="btn btn-primary">Edit</a>
-                                  <a href="{{route('admin.form.destroy', ['id'=>$form->id])}}" class="btn btn-danger">Delete</a>
+                                  <!-- <td>  {{$form->resume}} </td> -->
+                                  <td> <a target="_blank" href="{{ asset('images/resume') }}/{{$form->resume}}">{{$form->resume}}</a>  </td>
+                                <!-- <td>
+                                  <td><a href="{{ asset('images/resume') }}/{{$form->resume}}"  target="_blank"><img height="100" width="100" src="{{ asset('images/resume') }}/{{$form->resume}}"/></a></td>-->
+                                <td> 
+                                  <a target="_blank" href="{{route('admin.form.destroy', ['id'=>$form->id])}}" onclick="return confirm('Are you sure?')" class="btn btn-danger">Delete</a>
                                 </td>
                             </tr>
                         @endforeach

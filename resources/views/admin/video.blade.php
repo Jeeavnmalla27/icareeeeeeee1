@@ -30,7 +30,10 @@
                             @foreach ($images as $image)
                             <tr>
                                 <td class="py-1">
-                                  <img class="img-fluid" src="{{ asset('images/slider') }}/{{$image->image}}" alt="image" />
+                                  <!-- <img class="img-fluid" src="{{ asset('storage/video') }}/{{$image->video}}" alt="video" /> -->
+                                  <video width="320" height="240" controls>
+                                    <source src="{{ asset('storage/video') }}/{{$image->video}}" type="video/mp4">
+                                  </video>
                                 </td>
                                 <td>
                                   {{$image->name}}
